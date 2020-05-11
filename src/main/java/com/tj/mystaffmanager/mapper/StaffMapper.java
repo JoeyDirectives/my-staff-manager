@@ -21,4 +21,16 @@ public interface StaffMapper {
      * @return 员工信息表
      */
     List<StaffEntity> getAllStaff();
+
+    /**
+     * 新增员工
+     * @param entity 源
+     */
+    void insertStaff(StaffEntity entity);
+
+    /**
+     * 修改员工信息
+     * @param entity 源
+     */
+    void updateSelectedStaff(StaffEntity entity);
 }

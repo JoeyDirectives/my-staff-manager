@@ -13,4 +13,6 @@ import java.util.List;
  **/
 public interface StaffService {
     List<StaffEntity> getAllStaff();
+    void insertStaff(StaffEntity entity);
+    void updateSelectedStaff(StaffEntity entity);
 }

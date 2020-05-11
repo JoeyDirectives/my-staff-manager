@@ -1,15 +1,10 @@
 package com.tj.mystaffmanager.controller;
 
 import com.tj.mystaffmanager.entity.NewsEntity;
-import com.tj.mystaffmanager.entity.UserEntity;
-import com.tj.mystaffmanager.service.LoginService;
 import com.tj.mystaffmanager.service.NewsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +22,36 @@ public class NewsController {
     @GetMapping("/api/HomePage/newsInfo")
     public List<NewsEntity> getNewsInfo() {
         return newsService.getAllNews();
+    }
+
+    /**
+     * 发布公告
+     *
+     * @param entity 前端参数
+     * @return 状态码
+     */
+    @PostMapping("/api/News/issueNews")
+    public String insertIntoApproveDone(@RequestBody NewsEntity entity) {
+        if (entity == null) {
+            return "400";
+        } else {
+            newsService.insertNewItem(entity);
+            return "200";
+        }
+    }
+
+    /**
+     * 删除未完成表对应索引数据
+     *
+     * @return 申请号
+     */
+    @GetMapping("/api/News/deleteNews")
+    public String deleteNewsById(@RequestParam("newsId") Integer newsId) {
+        if (newsId == null) {
+            return "400";
+        } else {
+            newsService.deleteNewsById(newsId);
+            return "200";
+        }
     }
 }

@@ -4,19 +4,20 @@ import lombok.Data;
 
 /**
  * @PACKAGE_NAME: com.tj.mystaffmanager.entity
- * @NAME: ApplicationEntity
+ * @NAME: LeaveApproveListsEntity
  * @USER: GOD_T
  * @DATE: 2020/5/2
- * @TIME: 14:39
+ * @TIME: 16:43
  **/
 @Data
-public class ApplicationEntity {
-    private Integer applicateId;
+public class LeaveApproveListsEntity {
+    private Integer approveId;
     private String applicateNum;
     private String applicateName;
     private String applicateDate;
-    private String applicatePerson;
-    private String doneConditions;
+    private String staffNum;
+    private String leaveType;
+    private String startDate;
+    private String endDate;
     private String applicateReason;
-
 }

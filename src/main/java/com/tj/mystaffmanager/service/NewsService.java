@@ -1,6 +1,7 @@
 package com.tj.mystaffmanager.service;
 
 import com.tj.mystaffmanager.entity.NewsEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ import java.util.List;
  **/
 public interface NewsService {
     List<NewsEntity> getAllNews();
+    void insertNewItem(NewsEntity entity);
+    void deleteNewsById(Integer newsId);
 }

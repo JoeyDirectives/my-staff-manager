@@ -1,6 +1,8 @@
 package com.tj.mystaffmanager.service;
 
 import com.tj.mystaffmanager.entity.ApplicationEntity;
+import com.tj.mystaffmanager.entity.LeaveApproveEntity;
+import com.tj.mystaffmanager.entity.LeaveApproveListsEntity;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,4 +18,13 @@ public interface ApplicationService {
     void newLeaveAddUndone(ApplicationEntity entity);
     List<ApplicationEntity> getAllUndone();
     void deleteSelectedById(Integer applicateId);
+    void insertIntoApprove(LeaveApproveEntity entity);
+    List<LeaveApproveEntity> getApproveLeaveLists();
+    void deleteByDate(String applicateDate);
+    void deleteLeaveApproveById(Integer approveId);
+    void insertIntoDone(ApplicationEntity entity);
+    List<ApplicationEntity> getAllDone();
+    void deleteByApplicateDate(String applicateDate);
+    void insertIntoApproveDone(LeaveApproveEntity entity);
+    List<LeaveApproveEntity> getApproveLeaveDone();
 }

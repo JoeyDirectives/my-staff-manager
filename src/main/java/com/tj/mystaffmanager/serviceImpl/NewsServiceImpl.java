@@ -26,4 +26,14 @@ public class NewsServiceImpl implements NewsService {
     public List<NewsEntity> getAllNews() {
         return newsMapper.getAllNews();
     }
+
+    @Override
+    public void insertNewItem(NewsEntity entity) {
+        newsMapper.insertNewItem(entity);
+    }
+
+    @Override
+    public void deleteNewsById(Integer newsId) {
+        newsMapper.deleteNewsById(newsId);
+    }
 }

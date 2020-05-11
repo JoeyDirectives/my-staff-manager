@@ -24,4 +24,14 @@ public class StaffServiceImpl implements StaffService {
     public List<StaffEntity> getAllStaff() {
         return staffMapper.getAllStaff();
     }
+
+    @Override
+    public void insertStaff(StaffEntity entity) {
+        staffMapper.insertStaff(entity);
+    }
+
+    @Override
+    public void updateSelectedStaff(StaffEntity entity) {
+        staffMapper.updateSelectedStaff(entity);
+    }
 }

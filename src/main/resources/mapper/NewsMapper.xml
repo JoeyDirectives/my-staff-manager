@@ -6,4 +6,15 @@
         select *
         from staff_database.news_items
     </select>
+    <!-- 发布公告 -->
+    <insert id="insertNewItem" parameterType="com.tj.mystaffmanager.entity.NewsEntity">
+        insert into staff_database.news_items(news_type, news_content, news_time)
+        values (#{newsType,jdbcType=VARCHAR}, #{newsContent,jdbcType=VARCHAR}, #{newsTime,jdbcType=VARCHAR})
+    </insert>
+    <!-- 删除历史公告 -->
+    <delete id="deleteNewsById" parameterType="java.lang.Integer">
+        delete
+        from staff_database.news_items
+        where news_id = #{newsId,jdbcType=INTEGER}
+    </delete>
 </mapper>

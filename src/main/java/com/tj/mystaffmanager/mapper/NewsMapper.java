@@ -21,4 +21,16 @@ public interface NewsMapper {
      * @return 公告列表
      */
     List<NewsEntity> getAllNews();
+
+    /**
+     * 发布公告
+     * @param entity 源
+     */
+    void insertNewItem(NewsEntity entity);
+
+    /**
+     * 删除历史公告
+     * @param newsId id
+     */
+    void deleteNewsById(@Param("newsId")Integer newsId);
 }
