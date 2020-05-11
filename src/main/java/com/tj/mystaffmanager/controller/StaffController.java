@@ -3,6 +3,7 @@ package com.tj.mystaffmanager.controller;
 import com.tj.mystaffmanager.entity.LeaveApproveEntity;
 import com.tj.mystaffmanager.entity.NewsEntity;
 import com.tj.mystaffmanager.entity.StaffEntity;
+import com.tj.mystaffmanager.entity.UserEntity;
 import com.tj.mystaffmanager.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -64,5 +65,15 @@ public class StaffController {
             staffService.updateSelectedStaff(entity);
             return "200";
         }
+    }
+
+    /**
+     * 查询权限列表
+     *
+     * @return 列表
+     */
+    @GetMapping("/api/Permissions/List")
+    public List<UserEntity> getApproveLeaveDone() {
+        return staffService.getAllPermission();
     }
 }

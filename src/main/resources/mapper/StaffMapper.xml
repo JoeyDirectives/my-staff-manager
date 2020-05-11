@@ -27,4 +27,9 @@
             work_type=#{workType,jdbcType=VARCHAR}
         where staff_id = #{staffId,jdbcType=INTEGER}
     </update>
+    <!-- 查询权限列表 -->
+    <select id="getAllPermission" resultType="com.tj.mystaffmanager.entity.UserEntity">
+        SELECT *
+        FROM staff_database.staff_login
+    </select>
 </mapper>

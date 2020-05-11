@@ -1,6 +1,7 @@
 package com.tj.mystaffmanager.mapper;
 
 import com.tj.mystaffmanager.entity.StaffEntity;
+import com.tj.mystaffmanager.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -33,4 +34,10 @@ public interface StaffMapper {
      * @param entity 源
      */
     void updateSelectedStaff(StaffEntity entity);
+
+    /**
+     * 查询权限列表
+     * @return yuan
+     */
+    List<UserEntity> getAllPermission();
 }
